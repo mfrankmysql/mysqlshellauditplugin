@@ -1,0 +1,52 @@
+itest = """ 
+{ 
+  "filter": 
+  { 
+   "id": "main", 
+   "class": 
+   { 
+      "name": "table_access", 
+      "event": 
+    { 
+      "name": [ "insert", "update", "delete" ], 
+      "log": false, 
+      "filter": 
+      { 
+        "activate": { "or": [ { "and": [ { "field": { "name": "table_database.str", "value": "test_database" } }, 
+                                         { "field": { "name": "table_name.str", "value": "user" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "test_table" } }, 
+                                         { "field": { "name": "table_name.str", "value": "user_privileges" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "db" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "global_grants" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "tables_priv" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "procs_priv" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "default_roles" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "role" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "role_edge" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "column_privs" } } ] }, 
+                              { "and": [ { "field": { "name": "table_database.str", "value": "mysql" } }, 
+                                         { "field": { "name": "table_name.str", "value": "global_grants" } } ] } 
+                           ] 
+                    }, 
+        "class": { "name": "general", 
+          "event": 
+           { 
+             "name": "status", 
+             "log": { "not": { "field": { "name": "general_error_code", "value": 0 } } }, 
+             "filter": { "ref": "main" } 
+           } 
+        } 
+      } 
+    } 
+   } 
+  } 
+}""" 
+
