@@ -8,7 +8,7 @@ This project is an independent community tool. It is not part of MySQL, MySQL Sh
 
 ## License and warranty
 
-This project is distributed under the MIT License and is provided on an "AS IS" basis, without warranties or conditions of any kind. See `LICENSE` for the full license text.
+This project is distributed under the Universal Permissive License (UPL), Version 1.0 and is provided on an "AS IS" basis, without warranties or conditions of any kind. See `LICENSE` for the full license text.
 
 ## Requirements
 
