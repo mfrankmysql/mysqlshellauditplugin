@@ -1,5 +1,5 @@
 # Copyright (c) 2026 Mike
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: UPL-1.0
 #
 # This is an independent community MySQL Shell plugin. It is not part of
 # MySQL, MySQL Shell, Oracle, or any official MySQL source tree.
